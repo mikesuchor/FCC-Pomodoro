@@ -1,0 +1,54 @@
+body {
+  background-color: #000;
+  text-align: center;
+}
+
+button {
+  font-size: 16px;
+  color: #fff;
+  outline: none;
+  border-radius: 10px;
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+#timer, #break {
+  margin: auto;
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 62px;
+}
+
+#break {
+  font-size: 48px;
+}
+
+#start {
+  background-color: #000;
+  border: 2px solid #0f0;
+}
+
+#stop {
+  background-color: #000;
+  border: 2px solid #f00;
+}
+
+#reset, #increment, #decrement, #incrementbreak, #decrementbreak {
+  background-color: #000;
+  border: 2px solid #222;
+}
+
+#start:hover {
+  background-color: #0f0;
+}
+
+#stop:hover {
+  background-color: #f00;
+}
+
+#reset:hover, #increment:hover, #decrement:hover, #incrementbreak:hover, #decrementbreak:hover {
+  background-color: #222;
+}
