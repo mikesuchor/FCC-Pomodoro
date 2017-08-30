@@ -49,7 +49,7 @@ function startTimer() {
         seconds = 59;
       }
       document.getElementById("timer").innerHTML = minutes + ":" + seconds;
-    }, 60);
+    }, 1000);
   }
 }
 
@@ -126,7 +126,7 @@ function startBreakTimer() {
         breakseconds = 59;
       }
       document.getElementById("break").innerHTML = breakminutes + ":" + breakseconds;
-    }, 60);
+    }, 1000);
   }
 }
 
