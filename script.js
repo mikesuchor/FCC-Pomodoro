@@ -18,6 +18,7 @@ User Story: I can customize the length of each pomodoro.
 
 var timer = 1500;
 var breaktimer = 300;
+var countDownSpeedInMS = 50;
 var minutes;
 var seconds;
 var timerCountDown;
@@ -43,13 +44,13 @@ function startTimer() {
         startBreakTimer();
       }
       if (seconds < 10 && seconds >= 0) {
-        seconds = "0" + seconds;
+        seconds = `0${seconds}`;
       } else if (seconds < 0) {
         minutes--;
         seconds = 59;
       }
-      document.getElementById("timer").innerHTML = minutes + ":" + seconds;
-    }, 1000);
+      document.getElementById("timer").innerHTML = `${minutes}:${seconds}`;
+    }, countDownSpeedInMS);
   }
 }
 
@@ -100,9 +101,9 @@ function getMinutesSeconds(time) {
   minutes = Math.floor(time / 60);
   seconds = time % 60;
   if (seconds < 10) {
-    seconds = "0" + seconds;
+    seconds = `0${seconds}`;
   }
-  return (document.getElementById("timer").innerHTML = minutes + ":" + seconds);
+  return (document.getElementById("timer").innerHTML = `${minutes}:${seconds}`);
 }
 
 /*-------------------BREAK TIMER-------------------*/
@@ -120,13 +121,13 @@ function startBreakTimer() {
         resetTimer();
       }
       if (breakseconds < 10 && breakseconds >= 0) {
-        breakseconds = "0" + breakseconds;
+        breakseconds = `0${breakseconds}`;
       } else if (breakseconds < 0) {
         breakminutes--;
         breakseconds = 59;
       }
-      document.getElementById("break").innerHTML = breakminutes + ":" + breakseconds;
-    }, 1000);
+      document.getElementById("break").innerHTML = `${breakminutes}:${breakseconds}`;
+    }, countDownSpeedInMS);
   }
 }
 
@@ -135,10 +136,10 @@ function getBreakMinutesSeconds(time) {
   breakminutes = Math.floor(time / 60);
   breakseconds = time % 60;
   if (breakseconds < 10) {
-    breakseconds = "0" + breakseconds;
+    breakseconds = `0${breakseconds}`;
   }
   // alert (breakminutes + ":" + breakseconds); ALERTS THE CORRECT NUMBER
-  return (document.getElementById("break").innerHTML = breakminutes + ":" + breakseconds);
+  return (document.getElementById("break").innerHTML = `${breakminutes}:${breakseconds}`);
 }
 
 /* Increments the break timer by 5 minutes if it's less than the max of 10 minutes */
@@ -161,8 +162,6 @@ function decrementBreakTimer() {
 
 /* Plays a sound when a timer hits 0 */
 function playSound() {
-  var alarm = new Audio(
-    "http://soundbible.com/mp3/Bell Sound Ring-SoundBible.com-181681426.mp3"
-    );
+  var alarm = new Audio("http://soundbible.com/mp3/Bell Sound Ring-SoundBible.com-181681426.mp3");
   alarm.play();
 }
